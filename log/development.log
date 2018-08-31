@@ -3641,3 +3641,2478 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3523278058797350595)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEntries (20180831100055)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "user_id" integer, "content" text, "time" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3523278058797350595)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3523278058797350595)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEntries (20180831100055)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "user_id" integer, "content" text, "time" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3523278058797350595)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3523278058797350595)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEntries (20180831100055)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "user_id" integer, "content" text, "time" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3523278058797350595)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (198.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hypochondria_development"[0m
+  [1m[35m (208.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hypochondria_test"[0m
+  [1m[35m (440.8ms)[0m  [1m[35mCREATE DATABASE "hypochondria_development" ENCODING = 'unicode'[0m
+  [1m[35m (442.8ms)[0m  [1m[35mCREATE DATABASE "hypochondria_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3523278058797350595)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180830074617)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830074617"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20180830075645)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830075645"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToUsers (20180830160640)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "date_of_birth" date[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "blood_type" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "rhesus_factor" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "brief_information" text[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "allergy" text[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830160640"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20180831100055)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "user_id" integer, "content" text, "time" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180831100055"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-31 10:19:05.797160"], ["updated_at", "2018-08-31 10:19:05.797160"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3523278058797350595)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3523278058797350595)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3523278058797350595)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dalbaeb@.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "dalbaeb@.com"], ["encrypted_password", "$2a$11$qOUbIiOsgdKtOg3AowVoZOvZFIyEdAVJNZWP0Sdn0Xir2Aumt7gmy"], ["created_at", "2018-08-31 10:24:29.933591"], ["updated_at", "2018-08-31 10:24:29.933591"], ["first_name", "lox"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "entries" ("user_id", "content", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["content", "dalbaebaurod"], ["time", "2018-08-31"], ["created_at", "2018-08-31 10:28:12.295372"], ["updated_at", "2018-08-31 10:28:12.295372"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:01:37 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-31 14:01:37 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 349ms (Views: 325.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:01:40 +0300
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-31 14:01:40 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-08-31 14:01:59 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 82ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-08-31 14:02:22 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 81ms (Views: 58.4ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-31 14:03:02 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oQlXFsTKz069wz2avtF047AFBM3JtywalYNvgkIuK8ka9gdBhRH4z9H6nDyWsUEohGOEYE0DuonMIM7TUevfvg==", "user"=>{"first_name"=>"Lel", "email"=>"sesh@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "date_of_birth(1i)"=>"2021", "date_of_birth(2i)"=>"4", "date_of_birth(3i)"=>"24", "blood_type"=>"AB", "rhesus_factor"=>"top", "brief_information"=>"i die", "allergy"=>"estb"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sesh@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "date_of_birth", "blood_type", "rhesus_factor", "brief_information", "allergy") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "sesh@gmail.com"], ["encrypted_password", "$2a$11$OYdSxTZhh3hxYQe449W4IeRi1Or73rHBhPieAfhS7WKc1dc1/7a/q"], ["created_at", "2018-08-31 11:03:03.119778"], ["updated_at", "2018-08-31 11:03:03.119778"], ["first_name", "Lel"], ["date_of_birth", "2021-04-24"], ["blood_type", 2], ["rhesus_factor", "top"], ["brief_information", "i die"], ["allergy", "estb"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:03:03 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (11.4ms)
+Completed 200 OK in 49ms (Views: 43.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:03:10 +0300
+  
+ActionController::RoutingError (undefined method `befote_action' for EntriesController:Class
+Did you mean?  before_action
+               after_action):
+  
+app/controllers/entries_controller.rb:2:in `<class:EntriesController>'
+app/controllers/entries_controller.rb:1:in `<top (required)>'
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:03:11 +0300
+  
+ActionController::RoutingError (undefined method `befote_action' for EntriesController:Class
+Did you mean?  before_action
+               after_action):
+  
+app/controllers/entries_controller.rb:2:in `<class:EntriesController>'
+app/controllers/entries_controller.rb:1:in `<top (required)>'
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:03:36 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (283.3ms)
+  Rendered entries/new.html.slim within layouts/application (287.9ms)
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f8ecd1dccd0>:0x00007f8ecd1d6cb8>):
+    3:     .col-md-6.col-md-offset-3
+    4:       =simple_form_for(@entry) do |f|
+    5:       .form-group
+    6:         = f.input :content,  class: "form-control"
+    7:       .form-group
+    8:         = f.input :time, class: "form-control"
+    9: 
+  
+app/views/entries/_form.html.slim:6:in `_app_views_entries__form_html_slim__1146752589832497880_70125651620160'
+app/views/entries/new.html.slim:3:in `_app_views_entries_new_html_slim__2442307687088263006_70125651684120'
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:03:38 +0300
+Processing by EntriesController#new as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (312.3ms)
+  Rendered entries/new.html.slim within layouts/application (343.1ms)
+Completed 500 Internal Server Error in 405ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f8ecd1dccd0>:0x00007f8ec57c6950>):
+    3:     .col-md-6.col-md-offset-3
+    4:       =simple_form_for(@entry) do |f|
+    5:       .form-group
+    6:         = f.input :content,  class: "form-control"
+    7:       .form-group
+    8:         = f.input :time, class: "form-control"
+    9: 
+  
+app/views/entries/_form.html.slim:6:in `_app_views_entries__form_html_slim__1146752589832497880_70125640938100'
+app/views/entries/new.html.slim:3:in `_app_views_entries_new_html_slim__2442307687088263006_70125587675620'
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:04:24 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (10.6ms)
+  Rendered entries/new.html.slim within layouts/application (16.6ms)
+Completed 200 OK in 59ms (Views: 53.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:05:32 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (11.1ms)
+  Rendered entries/new.html.slim within layouts/application (17.5ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:05:52 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.7ms)
+  Rendered entries/new.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:07:09 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.9ms)
+  Rendered entries/new.html.slim within layouts/application (15.4ms)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:07:15 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 57ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-31 14:07:18 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 65ms (Views: 61.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:07:31 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (4.5ms)
+Completed 200 OK in 63ms (Views: 55.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:12:16 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (11.0ms)
+  Rendered entries/new.html.slim within layouts/application (18.6ms)
+Completed 200 OK in 67ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2018-08-31 14:12:32 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UBROOqWqZSF9p6P12BYXodfG+mFOPSWoA+Ny85WdIUjr6x5t5HFSoBGeAlPwdiJq46B6zMqJsztaQNOihljVPw==", "entry"=>{"content"=>"test content", "time(1i)"=>"2013", "time(2i)"=>"9", "time(3i)"=>"19"}, "commit"=>"Create"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `current' for #<EntriesController:0x00007f8ec5705638>
+Did you mean?  current_user):
+  
+app/controllers/entries_controller.rb:15:in `create'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 14:12:34 +0300
+Processing by EntriesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+No template found for EntriesController#index, rendering head :no_content
+Completed 204 No Content in 305ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2018-08-31 14:12:49 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UBROOqWqZSF9p6P12BYXodfG+mFOPSWoA+Ny85WdIUjr6x5t5HFSoBGeAlPwdiJq46B6zMqJsztaQNOihljVPw==", "entry"=>{"content"=>"test content", "time(1i)"=>"2013", "time(2i)"=>"9", "time(3i)"=>"19"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "entries" ("user_id", "content", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["content", "test content"], ["time", "2013-09-19"], ["created_at", "2018-08-31 11:12:50.029585"], ["updated_at", "2018-08-31 11:12:50.029585"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/entries/2
+Completed 302 Found in 56ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:12:50 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 230ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::UnknownFormat (EntriesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:12:51 +0300
+Processing by EntriesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+No template found for EntriesController#show, rendering head :no_content
+Completed 204 No Content in 318ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:16:45 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:16:50 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.9ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:17:02 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (5.0ms)
+Completed 200 OK in 62ms (Views: 50.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:18:35 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:18:58 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (3.0ms)
+Completed 200 OK in 50ms (Views: 43.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:20:28 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (3.1ms)
+Completed 200 OK in 50ms (Views: 43.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:20:54 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 34.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:21:16 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 36.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:21:50 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 38.4ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:31:50 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.7ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 14:34:13 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.4ms)
+Completed 200 OK in 41ms (Views: 34.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:35:37 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.5ms)
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:38:28 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:38:31 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.3ms)
+  Rendered entries/new.html.slim within layouts/application (15.6ms)
+Completed 200 OK in 60ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:38:45 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.9ms)
+Completed 200 OK in 50ms (Views: 42.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:42:19 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:43:05 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:43:23 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:43:41 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.2ms)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:43:54 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.0ms)
+  Rendered entries/new.html.slim within layouts/application (14.6ms)
+Completed 200 OK in 67ms (Views: 59.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:44:32 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.5ms)
+  Rendered entries/new.html.slim within layouts/application (13.6ms)
+Completed 200 OK in 55ms (Views: 48.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 14:44:38 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 237ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::UnknownFormat (EntriesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:44:41 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.0ms)
+  Rendered entries/new.html.slim within layouts/application (12.8ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:45:21 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 39.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 14:45:30 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 221ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::UnknownFormat (EntriesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:45:33 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:45:35 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.9ms)
+  Rendered entries/new.html.slim within layouts/application (14.5ms)
+Completed 200 OK in 57ms (Views: 50.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:50:36 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.2ms)
+  Rendered entries/new.html.slim within layouts/application (13.1ms)
+Completed 200 OK in 55ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-31 14:50:43 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:50:45 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.7ms)
+Completed 200 OK in 56ms (Views: 50.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:50:48 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.0ms)
+  Rendered entries/new.html.slim within layouts/application (15.7ms)
+Completed 200 OK in 63ms (Views: 55.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-31 14:50:50 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:51:15 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.8ms)
+Completed 200 OK in 54ms (Views: 45.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 14:51:25 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (10.5ms)
+  Rendered entries/new.html.slim within layouts/application (16.9ms)
+Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-31 14:51:53 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 69ms (Views: 63.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 14:52:25 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.7ms)
+Completed 200 OK in 57ms (Views: 49.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 15:01:47 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 34.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:01:49 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No Ransack::Search object was provided to search_form_for!):
+    1: .container
+    2:   .pull-right
+    3:     =search_form_for @q, class: "form-inline"
+  
+app/views/entries/index.html.slim:3:in `_app_views_entries_index_html_slim___2727746712438423360_70125640806520'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:03:44 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No Ransack::Search object was provided to search_form_for!):
+    1: .container
+    2:   .pull-right
+    3:     =search_form_for @q, class: "form-inline"
+  
+app/views/entries/index.html.slim:3:in `_app_views_entries_index_html_slim___2727746712438423360_70125585545440'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:03:45 +0300
+Processing by EntriesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (25.6ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No Ransack::Search object was provided to search_form_for!):
+    1: .container
+    2:   .pull-right
+    3:     =search_form_for @q, class: "form-inline"
+  
+app/views/entries/index.html.slim:3:in `_app_views_entries_index_html_slim___2727746712438423360_70125655641800'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:10:18 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.4ms)
+
+
+  
+SyntaxError (/Users/true/rails_app/hypochondria/app/views/entries/index.html.slim:4: syntax error, unexpected keyword_class, expecting ')'
+placeholder: "Search..." class: "form-control"))).to_s)); 
+                              ^):
+  
+app/views/entries/index.html.slim:4: syntax error, unexpected keyword_class, expecting ')'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:10:19 +0300
+Processing by EntriesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/true/rails_app/hypochondria/app/views/entries/index.html.slim:4: syntax error, unexpected keyword_class, expecting ')'
+placeholder: "Search..." class: "form-control"))).to_s)); 
+                              ^):
+  
+app/views/entries/index.html.slim:4: syntax error, unexpected keyword_class, expecting ')'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:10:35 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  Rendered entries/index.html.slim within layouts/application (157.2ms)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `input' for #<Ransack::Helpers::FormBuilder:0x00007f8ec5715088>):
+    1: .container
+    2:   .pull-right
+    3:     =search_form_for @q, class: "form-inline" do |f|
+    4:       = f.input :content, placeholder: "Search...", class: "form-control"
+  
+app/views/entries/index.html.slim:4:in `block in _app_views_entries_index_html_slim___2727746712438423360_70125608844300'
+app/views/entries/index.html.slim:3:in `_app_views_entries_index_html_slim___2727746712438423360_70125608844300'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:10:36 +0300
+Processing by EntriesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  Rendered entries/index.html.slim within layouts/application (230.9ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `input' for #<Ransack::Helpers::FormBuilder:0x00007f8ec5397f50>):
+    1: .container
+    2:   .pull-right
+    3:     =search_form_for @q, class: "form-inline" do |f|
+    4:       = f.input :content, placeholder: "Search...", class: "form-control"
+  
+app/views/entries/index.html.slim:4:in `block in _app_views_entries_index_html_slim___2727746712438423360_70125650898680'
+app/views/entries/index.html.slim:3:in `_app_views_entries_index_html_slim___2727746712438423360_70125650898680'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:11:28 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 33.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:12:27 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 39ms (Views: 33.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:16:53 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.2ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:18:19 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 69ms (Views: 39.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:19:04 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.1ms)
+Completed 200 OK in 42ms (Views: 35.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:20:47 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.1ms)
+Completed 200 OK in 3303ms (Views: 3296.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:22:08 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.3ms)
+Completed 200 OK in 47ms (Views: 39.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:23:22 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 2634ms (Views: 2627.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:23:47 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.5ms)
+Completed 200 OK in 2615ms (Views: 2607.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:24:25 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.3ms)
+Completed 200 OK in 2680ms (Views: 2673.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:24:47 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.8ms)
+Completed 200 OK in 2652ms (Views: 2645.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 15:25:34 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:25:37 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (5.4ms)
+Completed 200 OK in 52ms (Views: 44.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 15:25:39 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.7ms)
+  Rendered entries/new.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 66ms (Views: 47.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:25:43 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.4ms)
+Completed 200 OK in 48ms (Views: 40.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 15:25:45 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.8ms)
+  Rendered entries/new.html.slim within layouts/application (14.8ms)
+Completed 200 OK in 65ms (Views: 57.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:25:47 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.8ms)
+Completed 200 OK in 71ms (Views: 63.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:30:28 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.8ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:30:58 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.6ms)
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:36:14 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:36:21 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 44ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:39:39 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.5ms)
+Completed 200 OK in 2644ms (Views: 2638.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:39:45 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.4ms)
+Completed 200 OK in 50ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:40:45 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.2ms)
+Completed 200 OK in 2654ms (Views: 2647.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:43:37 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (5.2ms)
+Completed 200 OK in 50ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:48:03 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.7ms)
+Completed 200 OK in 2686ms (Views: 2679.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:48:19 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (6.1ms)
+Completed 200 OK in 2672ms (Views: 2665.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:48:56 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 2681ms (Views: 2673.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:50:53 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (6.6ms)
+Completed 200 OK in 2668ms (Views: 2660.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:52:25 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (6.3ms)
+Completed 200 OK in 53ms (Views: 46.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:52:50 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 50ms (Views: 43.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:56:24 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.3ms)
+Completed 200 OK in 45ms (Views: 37.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:56:49 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.2ms)
+Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=test+" for 127.0.0.1 at 2018-08-31 15:57:24 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"test "}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (9.1ms)
+Completed 200 OK in 66ms (Views: 58.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=test+" for 127.0.0.1 at 2018-08-31 15:57:48 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"test "}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 66ms (Views: 58.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=test+" for 127.0.0.1 at 2018-08-31 15:57:55 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"test "}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (8.2ms)
+Completed 200 OK in 60ms (Views: 53.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=test+" for 127.0.0.1 at 2018-08-31 15:58:21 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"test "}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 51ms (Views: 42.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=test+" for 127.0.0.1 at 2018-08-31 15:58:23 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"test "}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 51ms (Views: 45.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 15:58:55 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (10.5ms)
+  Rendered entries/new.html.slim within layouts/application (18.7ms)
+Completed 200 OK in 62ms (Views: 54.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2018-08-31 15:59:08 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o6eK5+Z7vG/71bww6aGTIsyh8Cjtjgk+h1bRCNz8c7CehhK3WZAjVHRbeofYcTLKUkAwPdVhM9li2oabMouy6A==", "entry"=>{"content"=>"testtesttest", "time(1i)"=>"2021", "time(2i)"=>"9", "time(3i)"=>"28"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "entries" ("user_id", "content", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["content", "testtesttest"], ["time", "2021-09-28"], ["created_at", "2018-08-31 12:59:08.363274"], ["updated_at", "2018-08-31 12:59:08.363274"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/entries/3
+Completed 302 Found in 16ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/entries/3" for 127.0.0.1 at 2018-08-31 15:59:08 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (3.1ms)
+Completed 200 OK in 41ms (Views: 35.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 15:59:11 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.1ms)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:00:28 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.9ms)
+Completed 200 OK in 45ms (Views: 38.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:02:29 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.0ms)
+Completed 200 OK in 45ms (Views: 38.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:02:43 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.0ms)
+Completed 200 OK in 51ms (Views: 43.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 16:02:47 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.2ms)
+  Rendered entries/new.html.slim within layouts/application (14.4ms)
+Completed 200 OK in 61ms (Views: 53.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2018-08-31 16:02:53 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"REFIJiYduDFT2aaJO4IUKDDjJ4Mk5fopWC+urcwk9Bp5YNB2mfYnCtxXYD4KUrXArgLnlhwKwM69o/k+IlM1Qg==", "entry"=>{"content"=>"searchme", "time(1i)"=>"2018", "time(2i)"=>"8", "time(3i)"=>"31"}, "commit"=>"Create"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("user_id", "content", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["content", "searchme"], ["time", "2018-08-31"], ["created_at", "2018-08-31 13:02:53.305044"], ["updated_at", "2018-08-31 13:02:53.305044"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/entries/4
+Completed 302 Found in 14ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/entries/4" for 127.0.0.1 at 2018-08-31 16:02:53 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:02:58 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.4ms)
+Completed 200 OK in 51ms (Views: 42.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=search" for 127.0.0.1 at 2018-08-31 16:03:02 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"search"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.0ms)
+Completed 200 OK in 45ms (Views: 38.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=searchme" for 127.0.0.1 at 2018-08-31 16:03:07 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"searchme"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 40.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=testtesttest" for 127.0.0.1 at 2018-08-31 16:03:13 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"testtesttest"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.3ms)
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=searchme" for 127.0.0.1 at 2018-08-31 16:05:28 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"searchme"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 44.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_or_time%5D=searchme" for 127.0.0.1 at 2018-08-31 16:05:49 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_or_time"=>"searchme"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.5ms)
+Completed 200 OK in 45ms (Views: 37.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:05:52 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.2ms)
+Completed 200 OK in 54ms (Views: 48.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:10:36 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.3ms)
+Completed 200 OK in 2628ms (Views: 2621.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:11:15 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.8ms)
+Completed 200 OK in 2780ms (Views: 2772.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:11:35 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.9ms)
+Completed 200 OK in 2769ms (Views: 2760.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:11:57 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.6ms)
+Completed 200 OK in 2735ms (Views: 2727.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:12:27 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.7ms)
+Completed 200 OK in 2645ms (Views: 2636.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:12:32 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (8.8ms)
+Completed 200 OK in 53ms (Views: 46.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:12:47 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.8ms)
+Completed 200 OK in 2671ms (Views: 2664.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:13:08 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (8.1ms)
+Completed 200 OK in 58ms (Views: 50.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:13:56 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.0ms)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 16:13:58 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (3.6ms)
+Completed 200 OK in 45ms (Views: 38.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:14:36 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.1ms)
+Completed 200 OK in 2659ms (Views: 2653.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:14:46 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.5ms)
+Completed 200 OK in 2659ms (Views: 2651.1ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:23:24 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  Rendered entries/index.html.slim within layouts/application (30.0ms)
+Completed 200 OK in 99ms (Views: 65.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:23:27 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  Rendered entries/index.html.slim within layouts/application (6.8ms)
+Completed 200 OK in 47ms (Views: 41.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=searchme" for 127.0.0.1 at 2018-08-31 16:23:33 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"searchme"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  Rendered entries/index.html.slim within layouts/application (7.3ms)
+Completed 200 OK in 47ms (Views: 39.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=searchme" for 127.0.0.1 at 2018-08-31 16:23:48 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"searchme"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  Rendered entries/index.html.slim within layouts/application (37.4ms)
+Completed 200 OK in 407ms (Views: 355.8ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 16:23:52 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.5ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:23:56 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  Rendered entries/index.html.slim within layouts/application (8.1ms)
+Completed 200 OK in 50ms (Views: 41.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 16:23:59 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 50ms (Views: 33.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/3" for 127.0.0.1 at 2018-08-31 16:24:01 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 35.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/4" for 127.0.0.1 at 2018-08-31 16:24:03 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.9ms)
+Completed 200 OK in 56ms (Views: 48.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:24:09 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  Rendered entries/index.html.slim within layouts/application (6.3ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:42:33 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (12.6ms)
+Completed 200 OK in 80ms (Views: 47.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:42:36 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=searchme" for 127.0.0.1 at 2018-08-31 16:42:43 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"searchme"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.0ms)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=searchme" for 127.0.0.1 at 2018-08-31 16:43:35 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"searchme"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  Rendered entries/index.html.slim within layouts/application (11.5ms)
+Completed 200 OK in 84ms (Views: 44.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:43:48 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  Rendered entries/index.html.slim within layouts/application (5.7ms)
+Completed 200 OK in 44ms (Views: 37.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent%5D=test" for 127.0.0.1 at 2018-08-31 16:46:52 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  Rendered entries/index.html.slim within layouts/application (5.3ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=search" for 127.0.0.1 at 2018-08-31 16:46:58 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"search"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (6.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE ("entries"."content" ILIKE '%search%')[0m
+  Rendered entries/index.html.slim within layouts/application (10.8ms)
+Completed 200 OK in 48ms (Views: 36.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=test" for 127.0.0.1 at 2018-08-31 16:47:08 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"test"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE ("entries"."content" ILIKE '%test%')[0m
+  Rendered entries/index.html.slim within layouts/application (4.9ms)
+Completed 200 OK in 44ms (Views: 38.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=test" for 127.0.0.1 at 2018-08-31 16:51:00 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"test"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND ("entries"."content" ILIKE '%test%')[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (14.4ms)
+Completed 200 OK in 87ms (Views: 53.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=" for 127.0.0.1 at 2018-08-31 16:51:03 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.3ms)
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=searchme" for 127.0.0.1 at 2018-08-31 16:51:09 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"searchme"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND ("entries"."content" ILIKE '%searchme%')[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.0ms)
+Completed 200 OK in 40ms (Views: 34.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 16:51:20 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:51:23 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.2ms)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries/2" for 127.0.0.1 at 2018-08-31 16:52:22 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/show.html.slim within layouts/application
+  Rendered entries/show.html.slim within layouts/application (2.8ms)
+Completed 200 OK in 44ms (Views: 36.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 16:52:33 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (74.2ms)
+  Rendered entries/new.html.slim within layouts/application (79.6ms)
+Completed 200 OK in 121ms (Views: 114.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:52:39 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 40.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 16:52:40 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.0ms)
+  Rendered entries/new.html.slim within layouts/application (15.0ms)
+Completed 200 OK in 55ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:52:42 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.0ms)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 16:52:43 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.2ms)
+  Rendered entries/new.html.slim within layouts/application (14.1ms)
+Completed 200 OK in 55ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:57:45 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.9ms)
+Completed 200 OK in 49ms (Views: 41.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:58:00 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.1ms)
+Completed 200 OK in 53ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:59:04 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/true/rails_app/hypochondria/app/views/entries/index.html.slim:12: syntax error, unexpected tLABEL, expecting ')'
+ edit_entry_path(entry) class: "btn btn-primary"))).to_s)); 
+                              ^):
+  
+app/views/entries/index.html.slim:12: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:59:05 +0300
+Processing by EntriesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  Rendered entries/index.html.slim within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/true/rails_app/hypochondria/app/views/entries/index.html.slim:12: syntax error, unexpected tLABEL, expecting ')'
+ edit_entry_path(entry) class: "btn btn-primary"))).to_s)); 
+                              ^):
+  
+app/views/entries/index.html.slim:12: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 16:59:13 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.6ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:00:55 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.6ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:02:15 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.3ms)
+Completed 200 OK in 3297ms (Views: 3291.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:02:59 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (9.4ms)
+Completed 200 OK in 2651ms (Views: 2643.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/2/edit" for 127.0.0.1 at 2018-08-31 17:03:20 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 231ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::UnknownFormat (EntriesController#edit is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:03:21 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.9ms)
+Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:09:28 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.9ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/2/edit" for 127.0.0.1 at 2018-08-31 17:09:30 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/edit.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.2ms)
+  Rendered entries/edit.html.slim within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: .container
+    2:   .row.align-items-center.justify-content-center
+    3:     .col-md-6.col-md-offset-3
+    4:       =simple_form_for(@entry) do |f|
+    5:         .form-group
+    6:           = f.input :content,  class: "form-control"
+    7:         .form-group
+  
+app/views/entries/_form.html.slim:4:in `_app_views_entries__form_html_slim___839010716508791663_70321699021540'
+app/views/entries/edit.html.slim:3:in `_app_views_entries_edit_html_slim__1610677685022423662_70321699176180'
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:09:44 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (12.3ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:10:13 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (14.7ms)
+Completed 200 OK in 81ms (Views: 45.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/entries/2/edit" for 127.0.0.1 at 2018-08-31 17:10:15 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/edit.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.3ms)
+  Rendered entries/edit.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 59ms (Views: 50.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:10:19 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.3ms)
+Completed 200 OK in 56ms (Views: 47.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:30 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.4ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/2/edit" for 127.0.0.1 at 2018-08-31 17:13:31 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/edit.html.slim within layouts/application
+  Rendered entries/_form.html.slim (10.2ms)
+  Rendered entries/edit.html.slim within layouts/application (18.8ms)
+Completed 200 OK in 62ms (Views: 54.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:33 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.8ms)
+Completed 200 OK in 63ms (Views: 56.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/entries/2/edit" for 127.0.0.1 at 2018-08-31 17:13:34 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/edit.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.4ms)
+  Rendered entries/edit.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 60ms (Views: 52.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:35 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.8ms)
+Completed 200 OK in 53ms (Views: 45.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/2/edit" for 127.0.0.1 at 2018-08-31 17:13:36 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND "entries"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering entries/edit.html.slim within layouts/application
+  Rendered entries/_form.html.slim (10.1ms)
+  Rendered entries/edit.html.slim within layouts/application (16.3ms)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:37 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.4ms)
+Completed 200 OK in 51ms (Views: 43.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:13:38 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.9ms)
+Completed 200 OK in 42ms (Views: 36.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:13:40 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.4ms)
+  Rendered entries/new.html.slim within layouts/application (15.8ms)
+Completed 200 OK in 59ms (Views: 51.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:41 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.4ms)
+Completed 200 OK in 48ms (Views: 40.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:13:45 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (18.1ms)
+  Rendered entries/new.html.slim within layouts/application (23.5ms)
+Completed 200 OK in 67ms (Views: 59.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:46 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.7ms)
+Completed 200 OK in 51ms (Views: 44.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-31 17:13:48 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 59ms (Views: 54.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:13:51 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.8ms)
+Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:13:54 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.0ms)
+  Rendered entries/new.html.slim within layouts/application (14.7ms)
+Completed 200 OK in 56ms (Views: 49.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:13:56 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (9.2ms)
+Completed 200 OK in 59ms (Views: 50.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:13:58 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.7ms)
+Completed 200 OK in 47ms (Views: 40.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:15:43 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:15:45 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.6ms)
+  Rendered entries/new.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 63ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:15:47 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.4ms)
+Completed 200 OK in 50ms (Views: 43.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:18:51 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.6ms)
+Completed 200 OK in 50ms (Views: 40.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:19:28 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.8ms)
+Completed 200 OK in 44ms (Views: 37.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=test+content" for 127.0.0.1 at 2018-08-31 17:19:43 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"test content"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND ("entries"."content" ILIKE '%test content%')[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (6.4ms)
+Completed 200 OK in 45ms (Views: 36.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=test" for 127.0.0.1 at 2018-08-31 17:19:48 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"test"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND ("entries"."content" ILIKE '%test%')[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.7ms)
+Completed 200 OK in 46ms (Views: 38.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries?utf8=%E2%9C%93&q%5Bcontent_cont%5D=searchme" for 127.0.0.1 at 2018-08-31 17:19:56 +0300
+Processing by EntriesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"content_cont"=>"searchme"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1 AND ("entries"."content" ILIKE '%searchme%')[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (5.4ms)
+Completed 200 OK in 43ms (Views: 35.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:21:58 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (2.9ms)
+Completed 200 OK in 55ms (Views: 48.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:22:01 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (8.8ms)
+  Rendered entries/new.html.slim within layouts/application (14.3ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:23:13 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (4.9ms)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:23:17 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.0ms)
+  Rendered entries/new.html.slim within layouts/application (14.1ms)
+Completed 200 OK in 57ms (Views: 49.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:23:18 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.1ms)
+Completed 200 OK in 52ms (Views: 45.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 17:43:50 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.slim within layouts/application
+  Rendered welcome/index.html.slim within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 44.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:43:52 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.8ms)
+  Rendered entries/new.html.slim within layouts/application (15.3ms)
+Completed 200 OK in 56ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:43:54 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.6ms)
+Completed 200 OK in 50ms (Views: 42.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:43:56 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (16.6ms)
+  Rendered entries/new.html.slim within layouts/application (23.1ms)
+Completed 200 OK in 62ms (Views: 54.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-31 17:43:58 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:43:59 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (9.1ms)
+  Rendered entries/new.html.slim within layouts/application (15.6ms)
+Completed 200 OK in 59ms (Views: 51.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-08-31 17:44:00 +0300
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/index.html.slim within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered entries/index.html.slim within layouts/application (7.4ms)
+Completed 200 OK in 53ms (Views: 44.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2018-08-31 17:44:02 +0300
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering entries/new.html.slim within layouts/application
+  Rendered entries/_form.html.slim (11.1ms)
+  Rendered entries/new.html.slim within layouts/application (17.7ms)
+Completed 200 OK in 61ms (Views: 54.2ms | ActiveRecord: 0.4ms)
+
+

@@ -18,3 +18,36 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
   text-align: center;
   margin-top: 10px;
 }
+
+/* entries views */
+.index_entries_page_header {
+  border-bottom: 1px solid black;
+  padding: 10px;
+
+    div.annotation {
+      float: left;
+
+    }
+    div.search_ransack_field {
+      float: right;
+      margin: 10px 20px 0px 0px;
+    }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.entries_list {
+  list-style: none;
+  li {
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    a {
+      margin-left: 15px;
+    }
+  }
+}

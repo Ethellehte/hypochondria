@@ -1,0 +1,15 @@
+.container
+  .index_entries_page_header.clearfix
+    .annotation
+      h3 My Entries
+    .search_ransack_field
+      = search_form_for @q, class: "form-inline" do |f|
+        = f.search_field :content_cont, placeholder: "Search...", class: "form-control"
+  ul.entries_list
+    - @user_entries.each do |entry|
+      li
+        = link_to entry.content, entry
+        = link_to "Edit", edit_entry_path(entry), class: "btn btn-primary btn-sm"
+        = link_to "Destroy", entry_path(entry), class: "btn btn-danger btn-sm",
+                                                        method: :delete,
+                                                        data: { confirm: "Are u sure?" }
