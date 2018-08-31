@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  measurement_type: 1
+  entry_id: 1
+  meascat_id: 1
+  string_value: MyString
+  number_value: 1.5
+  boolean_value: false
+
+two:
+  name: MyString
+  measurement_type: 1
+  entry_id: 1
+  meascat_id: 1
+  string_value: MyString
+  number_value: 1.5
+  boolean_value: false
