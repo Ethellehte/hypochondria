@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'file_validators'
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do

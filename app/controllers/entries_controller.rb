@@ -35,6 +35,8 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+    @entry.destroy
+    redirect_to root_path
   end
 
     private
