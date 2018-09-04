@@ -4,5 +4,5 @@ class MeasurmentCategory < ApplicationRecord
   validates :title, presence: true
   validates :measurment_type, presence: true
 
-  enum measurment_type: [:string_value, :integer_value]
+  enum measurment_type: [string_value: 1, integer_value: 2]
 end

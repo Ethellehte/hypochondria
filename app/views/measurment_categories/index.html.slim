@@ -5,7 +5,7 @@
   ul.entries_list
     - @measurment_categories.each do |measurment_category|
       li
-        = link_to entry.content, entry
+        = link_to measurment_category.title, measurment_category
         = link_to "Edit", edit_measurment_category_path(measurment_category), class: "btn btn-primary btn-sm"
         = link_to "Destroy", measurment_category_path(measurment_category), class: "btn btn-danger btn-sm",
                                                         method: :delete,

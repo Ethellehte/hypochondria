@@ -14,7 +14,7 @@ class MeasurmentCategoriesController < ApplicationController
     end
 
     def create
-      @measurment_categories = current_user.measurment_categories.build(measurments_categories_params)
+      @measurment_categories = current_user.measurment_categories.build(measurment_categories_params)
 
       if @measurment_categories.save
         redirect_to @measurment_categories, notice: "Entry created"
@@ -46,7 +46,7 @@ class MeasurmentCategoriesController < ApplicationController
       end
 
       def measurment_categories_params
-        params.require(:measurmentcategory).permit(:title, :input_type)
+        params.require(:measurment_category).permit(:title, :measurment_type)
       end
 
 end
