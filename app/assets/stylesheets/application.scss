@@ -5,6 +5,15 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 
 @import "simple_form-bootstrap/simple_form-bootstrap";
 
+
+/* header */
+
+.menu {
+
+}
+
+
+
 /*devise forms */
 .centered_button input[type="submit"] {
     display: block;

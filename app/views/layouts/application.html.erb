@@ -17,7 +17,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown menu">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Account
       </a>
@@ -25,6 +25,10 @@
         <%= link_to "Add Entry", new_entry_path, class: "dropdown-item" %>
         <div class="dropdown-divider"></div>
         <%= link_to "My entries", entries_path, class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Add Measurment Category", new_measurment_category_path, class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+          <%= link_to "My measurments categories", measurment_categories_path, class: "dropdown-item" %>
         <div class="dropdown-divider"></div>
         <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
       </div>
