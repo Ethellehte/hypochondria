@@ -11,11 +11,12 @@ class EntriesController < ApplicationController
 
   def new
     @entry = current_user.entries.build
+    @measurment_categories = current_user.measurment_categories
   end
 
   def create
     @entry = current_user.entries.build(entries_params)
-
+    @entry.measurement_ids = params[:measurement_ids]
     if @entry.save
       redirect_to @entry, notice: "Entry created"
     else
@@ -24,6 +25,7 @@ class EntriesController < ApplicationController
   end
 
   def edit
+    @measurment_categories = current_user.measurment_categories
   end
 
   def update
@@ -36,7 +38,7 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry.destroy
-    redirect_to root_path
+    redirect_to entries_path
   end
 
     private
@@ -46,7 +48,7 @@ class EntriesController < ApplicationController
     end
 
     def entries_params
-      params.require(:entry).permit(:content, :time)
+      params.require(:entry).permit!
     end
 
 

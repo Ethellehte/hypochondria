@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.4'
+
 
 gem 'dotenv-rails'
 gem 'rails', '~> 5.1.6'
@@ -26,6 +26,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'file_validators'
 gem 'rails_12factor', group: :production
+gem "font-awesome-rails"
+
 
 
 group :development, :test do

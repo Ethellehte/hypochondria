@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  $("li.number_measurement_<%= @measurement.id %>").remove();
+  $(".measurement_list").append("<%= j render(partial: 'measurment_item', locals: { m: @measurement})%>");
+})

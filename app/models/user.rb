@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :entries
   has_many :measurment_categories
+  has_many :measurments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

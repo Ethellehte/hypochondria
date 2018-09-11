@@ -1,0 +1,4 @@
+$(document).ready(function(){
+  $("#new_entry").append("<input type='hidden' name='measurement_ids[]' value='<%= @measurement.id %>'>");
+  $(".measurement_list").append("<%= j render(partial: 'measurment_item', locals: { m: @measurement})%>");
+})

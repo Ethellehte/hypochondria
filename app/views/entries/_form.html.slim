@@ -2,9 +2,24 @@
   .row.align-items-center.justify-content-center
     .col-md-6.col-md-offset-3
       =simple_form_for(@entry) do |f|
+        / = f.hidden_field :measurement_ids, value: params[:measurement]
         .form-group
           = f.input :content,  class: "form-control"
         .form-group
-          = f.input :time, class: "form-control"
+          = f.input :time, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year, class: "form-control"
 
-          = f.submit "Create", class: "btn btn-primary"
+        - unless @measurment_categories.nil?
+          .form-group.measurment_select
+            = select_tag(:measurement_category_id, options_for_select(@measurment_categories.map{ |m| [m.title, m.id, {'data-measurment-type': m.measurment_type}] }), class: "form-control")
+          .form-group.measurment_string_field
+            input.form-control type="text" type_of_value="string_value"
+            a.measurement_submit.btn.btn-primary save
+          .form-group.measurment_integer_field
+            input.form-control type="number" type_of_value="integer_value"
+            a.measurement_submit.btn.btn-primary save
+          ul.measurement_list
+
+
+
+        = f.submit "Create", class: "btn btn-primary"

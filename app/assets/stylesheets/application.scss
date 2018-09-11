@@ -1,17 +1,23 @@
 
 $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 @import "bootstrap";
+@import "font-awesome";
 
 
 @import "simple_form-bootstrap/simple_form-bootstrap";
 
 
+
 /* header */
 
-.menu {
 
+.dropdown-toggle {
+  margin-right: 60px;
 }
 
+.nav-link {
+  margin-right: 30px;
+}
 
 
 /*devise forms */
@@ -58,5 +64,29 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
     a {
       margin-left: 15px;
     }
+  }
+}
+/* entries form */
+
+.measurment_string_field, .measurment_integer_field {
+    display: none;
+    a {
+      color: white;
+      margin-top: 10px;
+    }
+}
+
+.measurement_list {
+  list-style: none;
+  padding-left: 0px;
+    li {
+    padding: 8px;
+    border-bottom: 1px solid black;
+      a {
+        margin-left: 15px;
+      }
+      a.measurement_edit_save_button {
+        margin-top: 10px;
+      }
   }
 }

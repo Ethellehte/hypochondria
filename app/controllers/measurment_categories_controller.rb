@@ -10,14 +10,14 @@ class MeasurmentCategoriesController < ApplicationController
     end
 
     def new
-      @measurment_categories = current_user.measurment_categories.build
+      @measurment_category = current_user.measurment_categories.build
     end
 
     def create
-      @measurment_categories = current_user.measurment_categories.build(measurment_categories_params)
+      @measurment_category = current_user.measurment_categories.build(measurment_categories_params)
 
-      if @measurment_categories.save
-        redirect_to @measurment_categories, notice: "Entry created"
+      if @measurment_category.save
+        redirect_to @measurment_category, notice: "Entry created"
       else
         render :new
       end
@@ -27,8 +27,8 @@ class MeasurmentCategoriesController < ApplicationController
     end
 
     def update
-      if @measurment_categories.update(entries_params)
-        redirect_to @measurment_categories
+      if @measurment_category.update(measurment_categories_params)
+        redirect_to @measurment_category
       else
         render :edit
       end
